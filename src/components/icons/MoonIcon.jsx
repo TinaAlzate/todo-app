@@ -1,8 +1,8 @@
-const MoonIcon = ({ fill = "#fff", ...props }) => {
+const MoonIcon = ({ ...props }) => { //fill = "#fff", así se pasaria el fill con un color por defecto, pero me da error
     return (
         <svg 
             {...props}
-            fill={fill}
+            // fill={fill}
             xmlns="http://www.w3.org/2000/svg" 
             width="26" 
             height="26">
