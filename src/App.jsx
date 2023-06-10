@@ -56,16 +56,46 @@ const App = () => {
         );
     };
 
+    const computedItemsLeft = todos.filter((todo) => !todo.completed).length;
+
+    const clearCompleted = () => {
+        setTodos(todos.filter((todo) => !todo.completed));
+    };
+
+    const [filter, setFilter] = useState("completed");
+
+    const changedFilter = (filter) => setFilter(filter);
+
+    const filteredTodos = () => {
+        switch (filter) {
+            case "all":
+                return todos;
+            case "active":
+                return todos.filter((todo) => !todo.completed);
+            case "completed":
+                return todos.filter((todo) => todo.completed);
+            default:
+                return todos;
+        }
+    };
+
     return (
-        <div className="min-h-screen bg-gray-300 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat">
+        <div className="min-h-screen bg-gray-300 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat dark:bg-gray-900 dark:bg-[url('./assets/images/bg-mobile-dark.jpg')]">
             <Header />
             <main className="container mx-auto mt-8 px-4">
                 <TodoCreate createTodo={createTodo} />
-                <TodoList todos={todos} removeTodo={removeTodo} updateTodo={updateTodo}/>
-                <TodoComputed />
-                <TodoFilter />
+                <TodoList
+                    todos={filteredTodos()}
+                    removeTodo={removeTodo}
+                    updateTodo={updateTodo}
+                />
+                <TodoComputed
+                    computedItemsLeft={computedItemsLeft}
+                    clearCompleted={clearCompleted}
+                />
+                <TodoFilter changedFilter={changedFilter} filter={filter} />
             </main>
-            <footer className="mt-8 text-center">
+            <footer className="mt-8 text-center dark:text-gray-400">
                 Drag and drop to reorder list
             </footer>
         </div>
