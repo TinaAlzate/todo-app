@@ -2,7 +2,7 @@ const MoonIcon = ({ ...props }) => { //fill = "#fff", así se pasaria el fill co
     return (
         <svg 
             {...props}
-            // fill={fill}
+            fill="#FFF"
             xmlns="http://www.w3.org/2000/svg" 
             width="26" 
             height="26">

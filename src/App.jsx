@@ -62,7 +62,7 @@ const App = () => {
         setTodos(todos.filter((todo) => !todo.completed));
     };
 
-    const [filter, setFilter] = useState("completed");
+    const [filter, setFilter] = useState("all");
 
     const changedFilter = (filter) => setFilter(filter);
 
