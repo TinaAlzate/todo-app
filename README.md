@@ -8,7 +8,7 @@ You can mark them as complete or keep them active, filter them, sort them by pri
 
 ## :arrow_forward: Demo
 
-> You can try our app, [here](https://todo-react-vite-tailwind-frontmentor.netlify.app/)
+> You can try our app, [here](https://todosaplication.netlify.app/)
 
 ## :technologist: Guide for developer
 
