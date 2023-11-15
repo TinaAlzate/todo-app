@@ -2,7 +2,9 @@
 
 ## :receipt: Generalities 
 
+This TODO list application allows you to create tasks and have them persist in your browser.
 
+You can mark them as complete or keep them active, filter them, sort them by priority using drag and drop functionality, delete each one of them or delete all the ones that are completed.
 
 ## :arrow_forward: Demo
 
